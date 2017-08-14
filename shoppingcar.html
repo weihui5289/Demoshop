@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;	
+		}
+		ul{
+			list-style: none;
+			overflow: hidden;
+		}
+		.nav li{
+			float: left;
+			margin-left: 20px;
+		}
+		.top input{
+			margin-right: 100px;
+		}
+		.goods{
+			border: 1px solid #ccc;
+			margin-top: 20px;
+		}
+		.goods>div{
+			overflow: hidden;
+		}
+		.goods>div:nth-child(2) input{
+			display: block;
+			float: left;
+			margin-right: 20px;
+			margin-top: 30px;
+		}
+		.goods img{
+			width: 300px;
+			display: block;
+			float: left;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="car">
+		<ul class="nav">
+			<li><input type="checkbox">全选 </li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+		</ul>
+		<div class="list">
+			<div class="goods">
+				<div class="top">
+					店铺<input type="checkbox" > 
+					<span>小计</span><span>0</span>
+				</div>
+				<div>
+					<input type="checkbox">
+					<img src="images/1.jpg" alt="">
+					<span>800</span>
+				</div>
+			</div>
+			<div class="goods">
+				<div class="top">
+					店铺<input type="checkbox"> 
+					<span>小计</span><span>0</span>
+				</div>
+				<div>
+					<input type="checkbox">
+					<img src="images/2.jpg" alt="">
+					<span>998</span>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.0.0.js"></script>
+	<script>
+		$("input").prop("checked",true);
+		// $("input").attr("checked","checked");
+		$(".nav input").click(function(){   //
+			var active = $(this).prop("checked")
+			console.log(active)
+			$(".car input").prop("checked",active)
+		})
+		// $(".goods>.top input").click(function(){
+		// 	var active1 = $(this).prop("checked");
+		// 	console.log(active1)
+		// 	$(this).parent().siblings("div").children("input").prop("checked",active1)
+		// })
+		// $(".goods input").click(function(){
+		// 	var state = true;
+		// 	$(".goods input").each(function(){
+		// 		if($(this).prop("checked") == false){
+		// 			state = false;
+		// 		}
+		// 	})
+		// 	if(state == true){
+		// 		$(".nav input").prop("checked",true)
+		// 	}else{
+		// 		$(".nav input").prop("checked",false)
+		// 	}
+		// })
+	</script>
+</body>
+</html>
